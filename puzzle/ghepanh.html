@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ghép ảnh</title>
+</head>
+<body>
+<img id="anh1" src="image/luffy1.jpg" onclick="changeImage1()" height="200" width="730">
+<img id="anh2" src="image/zoro2.jpg" onclick="changeImage2()" height="200" width="730">
+<img id="anh3" src="image/luffy3.jpg" onclick="changeImage3()" height="200" width="730">
+</body>
+</html>
+<script>
+    let image1 = document.getElementById("anh1");
+    let count1 = 0;
+    let image2 = document.getElementById("anh2");
+    let count2 = 1;
+    let image3 = document.getElementById("anh3");
+    let count3 = 2;
+    function changeImage1() {
+        count1++;
+        console.log("ktra count1", count1)
+        if (count1 === 1) {
+            console.log("count1 =====",count1)
+            image1.src = "image/zoro1.jpg";
+        }else if (count1 === 2){
+            image1.src = "image/sanji1.jpg";
+        }else {
+            count1=0;
+            image1.src = "image/luffy1.jpg";
+        }
+        checkShadow()
+    }
+    function changeImage2() {
+        count2++;
+        console.log("ktra count2", count2)
+        if (count2 == 1) {
+            image2.src = "image/zoro2.jpg";
+        }else if (count2 == 2){
+            image2.src = "image/sanji2.jpg";
+        }else {
+            count2=0;
+            image2.src = "image/luffy2.jpg";
+        }
+        checkShadow()
+    }
+    function changeImage3() {
+        count3++;
+        console.log("ktra count3", count3)
+        if (count3 == 1) {
+            image3.src = "image/zoro3.jpg"
+        }else if (count3 == 2){
+            image3.src = "image/sanji3.jpg"
+        }else {
+            count3=0;
+            image3.src = "image/luffy3.jpg"
+        }
+        checkShadow()
+    }
+    function checkShadow(){
+        if(count1==count3&&count1==count2){
+        console.log("co vao ì k")
+        image1.style.boxShadow = "red 3px 3px 6px";
+        image2.style.boxShadow = "red 3px 3px 6px";
+        image3.style.boxShadow = "red 3px 3px 6px";
+        }else {
+            image1.style.boxShadow = "black 3px 3px 6px";
+            image2.style.boxShadow = "black 3px 3px 6px";
+            image3.style.boxShadow = "black 3px 3px 6px";
+        }
+    }
+</script>

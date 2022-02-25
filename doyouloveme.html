@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p style="position: absolute; left: 200px;top: 200px">Do you love me?</p>
+<button onclick="caseyes()" style="position: absolute;left: 200px;top: 250px">yes</button>
+<button onmouseover="caseno()" id="no" style="position: absolute;left: 250px;top: 250px">no</button>
+</body>
+</html>
+<script>
+    function caseyes(){
+        alert("<3");
+    }
+    function caseno(){
+        let x = Math.random()*innerWidth;
+        let y = Math.random()*innerHeight;
+        document.getElementById("no").style.left = x + 'px';
+        document.getElementById("no").style.top = y + 'px';
+    }
+</script>
